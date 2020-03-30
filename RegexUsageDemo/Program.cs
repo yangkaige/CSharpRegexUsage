@@ -74,9 +74,9 @@ namespace RegexUsageDemo
             //string str = "abccccc";
             //Console.WriteLine(Regex.IsMatch(str,"^abc*?$"));
             //Console.WriteLine(Regex.Match(str, "^abc*?$").Value);
-            string str = "111。111111。1111。1111。";
+            string str = "。111。111111。1111。1111。";
             
-            MatchCollection matchCollection = Regex.Matches(str, "(.)+?。");
+            MatchCollection matchCollection = Regex.Matches(str, "(.)*?。");
             foreach (Match item in matchCollection)
             {
                 Console.WriteLine(item.Value);
