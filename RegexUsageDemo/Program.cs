@@ -67,9 +67,20 @@ namespace RegexUsageDemo
             //}
             //Console.WriteLine("IP地址为:{0},端口号为：{1}",match.Groups[1].Value, match.Groups[2].Value);
             //字符中替换
-            string str = "fadsfsdafewjlkjrjrelkre435349igat9904324ljlsda24";
-            string res = Regex.Replace(str, @"\d+","--");
-            Console.WriteLine(res);
+            //string str = "fadsfsdafewjlkjrjrelkre435349igat9904324ljlsda24";
+            //string res = Regex.Replace(str, @"\d+","--");
+            //Console.WriteLine(res);
+            //贪婪匹配
+            //string str = "abccccc";
+            //Console.WriteLine(Regex.IsMatch(str,"^abc*?$"));
+            //Console.WriteLine(Regex.Match(str, "^abc*?$").Value);
+            string str = "111。111111。1111。1111。";
+            
+            MatchCollection matchCollection = Regex.Matches(str, "(.)+?。");
+            foreach (Match item in matchCollection)
+            {
+                Console.WriteLine(item.Value);
+            }
             Console.ReadKey();
         }
     }
